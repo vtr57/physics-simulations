@@ -1,0 +1,122 @@
+<div id="glowscript" class="glowscript">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link type="text/css" href="https://www.glowscript.org/css/redmond/2.1/jquery-ui.custom.css" rel="stylesheet" />
+<link type="text/css" href="https://www.glowscript.org/css/ide.css" rel="stylesheet" />
+<script type="text/javascript" src="https://www.glowscript.org/lib/jquery/2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://www.glowscript.org/lib/jquery/2.1/jquery-ui.custom.min.js"></script>
+<script type="text/javascript" src="https://www.glowscript.org/package/glow.3.0.min.js"></script>
+<script type="text/javascript" src="https://www.glowscript.org/package/RSrun.3.0.min.js"></script>
+<script type="text/javascript"><!--//--><![CDATA[//><!--
+
+// START JAVASCRIPT
+;(function() {;
+async function __main__() {
+"use strict";
+
+    var version, display, vector, print, arange, __name__, type, scene, RS_ls, cena1, partícula1, partícula2, mybox, Início, Final, a, b, c;
+    version = RS_list_decorate([ "3.0", "glowscript" ]);
+    Array.prototype['+'] = function(r) {return this.concat(r)}
+    Array.prototype['*'] = function(r) {return __array_times_number(this, r)}
+    window.__GSlang = "vpython";
+    display = canvas;
+    vector = vec;
+    print = GSprint;
+    arange = range;
+    __name__ = "__main__";
+    type = pytype;
+    scene = canvas();
+    fontloading();
+    await waitforfonts();
+    "3";
+    cena1 = RS_interpolate_kwargs.call(this, canvas, [RS_desugar_kwargs({width: 1200, height: 600, title: "Tela 1"})]);
+    "4";
+    cena1.range = 35;
+    "6";
+    partícula1 = RS_interpolate_kwargs.call(this, sphere, [RS_desugar_kwargs({pos: vector(50["-u"](), 0, 0), color: color.blue, opacity: .3, radius: 2, make_trail: true, retain: 10, trail_type: "points"})]);
+    "7";
+    partícula2 = RS_interpolate_kwargs.call(this, sphere, [RS_desugar_kwargs({pos: vector(50["-u"](), 0, 0), color: color.red, radius: 2, make_trail: true, retain: 10, trail_type: "points"})]);
+    "8";
+    mybox = RS_interpolate_kwargs.call(this, box, [RS_desugar_kwargs({pos: vector(55, 0, 0), length: .1, height: 50, width: 50, color: vector(1, .926, 0)})]);
+    "10";
+    Início = RS_interpolate_kwargs.call(this, text, [RS_desugar_kwargs({text: "Início", align: "center", color: color.green, pos: vector(50["-u"](), 5["-u"](), .5), height: 2})]);
+    "11";
+    Final = RS_interpolate_kwargs.call(this, text, [RS_desugar_kwargs({text: "Final", align: "center", color: color.green, pos: vector(0, 5["-u"](), .5), height: 2})]);
+    "13";
+    while (true) {
+        "14";
+        (await sleep(1));
+        "15";
+        partícula1.pos = vector(50["-u"](), 0, 0);
+        "16";
+        partícula2.pos = vector(50["-u"](), 0, 0);
+        "17";
+        a = 0;
+        "18";
+        while (a["<"](10)) {
+            "19";
+            (await rate(20));
+            "20";
+            if (a["<"](5)) {
+                "21";
+                partícula2.pos.x=partícula2.pos.x["+"](1.99);
+                "22";
+            } else {
+                "23";
+                partícula2.pos.x=partícula2.pos.x["+"](.999["-u"]());
+            }
+            "24";
+            a=a["+"](.1);
+        }
+        "26";
+        (await sleep(.5));
+        "28";
+        b = 0;
+        "29";
+        while (b["<"](10)) {
+            "30";
+            (await rate(20));
+            "31";
+            partícula1.pos.x=partícula1.pos.x["+"](.51);
+            "32";
+            b=b["+"](.1);
+        }
+        "34";
+        (await sleep(.5));
+        "36";
+        c = 0;
+        "37";
+        partícula2.pos = vector(50["-u"](), 0, 0);
+        "38partícula2.make_trail = False";
+        "39";
+        partícula1.pos = vector(50["-u"](), 0, 0);
+        "40";
+        while (c["<"](10)) {
+            "41";
+            (await rate(20));
+            "42";
+            if (c["<"](5)) {
+                "43";
+                partícula2.pos.x=partícula2.pos.x["+"](1.99);
+                "44";
+            } else {
+                "45";
+                partícula2.pos.x=partícula2.pos.x["+"](.999["-u"]());
+            }
+            "46";
+            partícula1.pos.x=partícula1.pos.x["+"](.51);
+            "47";
+            c=c["+"](.1);
+        }
+        "48";
+        (await sleep(1));
+    }
+};
+if (!__main__.__module__) Object.defineProperties(__main__, {
+    __module__ : {value: "__main__"}
+});
+
+;$(function(){ window.__context = { glowscript_container: $("#glowscript").removeAttr("id") }; __main__() })})()
+// END JAVASCRIPT
+
+//--><!]]></script>
+</div>

@@ -1,0 +1,132 @@
+<div id="glowscript" class="glowscript">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link type="text/css" href="https://www.glowscript.org/css/redmond/2.1/jquery-ui.custom.css" rel="stylesheet" />
+<link type="text/css" href="https://www.glowscript.org/css/ide.css" rel="stylesheet" />
+<script type="text/javascript" src="https://www.glowscript.org/lib/jquery/2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://www.glowscript.org/lib/jquery/2.1/jquery-ui.custom.min.js"></script>
+<script type="text/javascript" src="https://www.glowscript.org/package/glow.3.0.min.js"></script>
+<script type="text/javascript" src="https://www.glowscript.org/package/RSrun.3.0.min.js"></script>
+<script type="text/javascript"><!--//--><![CDATA[//><!--
+
+// START JAVASCRIPT
+;(function() {;
+async function __main__() {
+"use strict";
+
+    var version, display, vector, print, arange, __name__, type, scene, RS_ls, cena1, partícula1, partícula2, Início, Final, grafico1, a, b, c;
+    version = RS_list_decorate([ "3.0", "glowscript" ]);
+    Array.prototype['+'] = function(r) {return this.concat(r)}
+    Array.prototype['*'] = function(r) {return __array_times_number(this, r)}
+    window.__GSlang = "vpython";
+    display = canvas;
+    vector = vec;
+    print = GSprint;
+    arange = range;
+    __name__ = "__main__";
+    type = pytype;
+    scene = canvas();
+    fontloading();
+    await waitforfonts();
+    "3";
+    cena1 = RS_interpolate_kwargs.call(this, canvas, [RS_desugar_kwargs({width: 1200, height: 600, title: "Tela 1"})]);
+    "4";
+    cena1.range = 7;
+    "6";
+    partícula1 = RS_interpolate_kwargs.call(this, sphere, [RS_desugar_kwargs({pos: vector(10["-u"](), 0, 0), color: color.blue, opacity: .3, radius: .5, make_trail: true, retain: 10, trail_type: "points"})]);
+    "7";
+    partícula2 = RS_interpolate_kwargs.call(this, sphere, [RS_desugar_kwargs({pos: vector(10["-u"](), 0, 0), color: color.red, radius: .5, make_trail: true, retain: 10, trail_type: "points"})]);
+    "9";
+    Início = RS_interpolate_kwargs.call(this, text, [RS_desugar_kwargs({text: "Início", align: "center", color: color.green, pos: vector(10["-u"](), 1["-u"](), .5), height: .5})]);
+    "10";
+    Final = RS_interpolate_kwargs.call(this, text, [RS_desugar_kwargs({text: "Final", align: "center", color: color.green, pos: vector(10, 1["-u"](), .5), height: .5})]);
+    "12";
+    grafico1 = RS_interpolate_kwargs.call(this, gcurve, [RS_desugar_kwargs({color: color.blue})]);
+    "14";
+    while (true) {
+        "15";
+        (await sleep(1));
+        "16";
+        partícula1.pos = vector(10["-u"](), 0, 0);
+        "17";
+        partícula2.pos = vector(10["-u"](), 0, 0);
+        "18";
+        a = 0;
+        "19";
+        while (a["<"](40)) {
+            "20";
+            (await rate(20));
+            "21";
+            if (a["<="](10)) {
+                "22";
+                partícula2.pos=partícula2.pos["+"](vector(.3, .4, 0));
+                "23";
+            } else if (a[">"](10) && a["<="](30)) {
+                "24";
+                partícula2.pos=partícula2.pos["+"](vector(.5, .4["-u"](), 0));
+                "25";
+            }
+            if (a[">"](30)) {
+                "26";
+                partícula2.pos=partícula2.pos["+"](vector(.7, .4, 0));
+            }
+            "27partícula1.pos.x += 0.49";
+            "28";
+            a=a["+"](1);
+        }
+        "29";
+        (await sleep(.5));
+        "30";
+        b = 0;
+        "31";
+        while (b["<"](40)) {
+            "32";
+            (await rate(20));
+            "33";
+            partícula1.pos.x=partícula1.pos.x["+"](.49);
+            "34";
+            b=b["+"](1);
+        }
+        "35";
+        (await sleep(.5));
+        "36";
+        c = 0;
+        "37";
+        partícula2.pos = vector(10["-u"](), 0, 0);
+        "38";
+        partícula1.pos = vector(10["-u"](), 0, 0);
+        "39";
+        while (c["<"](40)) {
+            "40";
+            (await rate(20));
+            "41";
+            if (c["<="](10)) {
+                "42";
+                partícula2.pos=partícula2.pos["+"](vector(.3, .4, 0));
+                "43";
+            } else if (c[">"](10) && c["<="](30)) {
+                "44";
+                partícula2.pos=partícula2.pos["+"](vector(.5, .4["-u"](), 0));
+                "45";
+            }
+            if (c[">"](30)) {
+                "46";
+                partícula2.pos=partícula2.pos["+"](vector(.7, .4, 0));
+            }
+            "47";
+            partícula1.pos.x=partícula1.pos.x["+"](.49);
+            "48";
+            c=c["+"](1);
+        }
+        "49";
+        (await sleep(1));
+    }
+};
+if (!__main__.__module__) Object.defineProperties(__main__, {
+    __module__ : {value: "__main__"}
+});
+
+;$(function(){ window.__context = { glowscript_container: $("#glowscript").removeAttr("id") }; __main__() })})()
+// END JAVASCRIPT
+
+//--><!]]></script>
+</div>
